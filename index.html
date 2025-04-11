@@ -167,21 +167,30 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat" />
   </a>
 
-  <!-- Left-side video with volume -->
-  <video id="leftVideo" autoplay loop playsinline controls>
+  <!-- Left-side video with sound/autoplay handling -->
+  <video id="leftVideo" loop playsinline controls>
     <source src="assets/your-video.mp4.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
+  <script>
+    const video = document.getElementById('leftVideo');
+    const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Mobile: start muted, let user unmute manually
+      video.muted = true;
+    } else {
+      // Desktop: autoplay with sound
+      video.muted = false;
+      video.autoplay = true;
+      video.play().catch(error => {
+        console.log('Autoplay with sound failed, trying muted:', error);
+        video.muted = true;
+        video.play();
+      });
+    }
+  </script>
+
 </body>
 </html>
-<script>
-  // Mute the video by default
-  const video = document.getElementById('leftVideo');
-  video.muted = true;
-
-  // Optional: Add event listener to toggle mute on click
-  video.addEventListener('click', () => {
-    video.muted = !video.muted;
-  });
-</script>
