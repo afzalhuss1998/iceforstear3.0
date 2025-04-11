@@ -110,6 +110,18 @@
       height: 60px;
     }
 
+    /* Left-side video */
+    #leftVideo {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      z-index: 998;
+    }
+
     /* Mobile responsiveness */
     @media (max-width: 600px) {
       .typing-text {
@@ -130,15 +142,14 @@
         font-size: 1em;
         padding: 12px 24px;
       }
+
+      #leftVideo {
+        width: 150px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <audio id="bgMusic" autoplay loop muted>
-    <source src="assets/background.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
 
   <section class="hero">
     <img src="assets/logo.jpg" alt="ICE Foresters Logo" class="logo" />
@@ -156,16 +167,21 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat" />
   </a>
 
-  <script>
-    // Allow user interaction to unmute and play background music
-    window.addEventListener('click', () => {
-      const music = document.getElementById('bgMusic');
-      music.muted = false; // Unmute music
-      music.play(); // Start playing music after click
-    }, { once: true });
-  </script>
+  <!-- Left-side video with volume -->
+  <video id="leftVideo" autoplay loop playsinline controls>
+    <source src="assets/your-video.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
 </body>
 </html>
-<!-- End of index.html -->
-<!-- This is a simple HTML page with a hero section, typing effect, and a floating WhatsApp button. The background music plays on user interaction. -->
+<script>
+  // Mute the video by default
+  const video = document.getElementById('leftVideo');
+  video.muted = true;
+
+  // Optional: Add event listener to toggle mute on click
+  video.addEventListener('click', () => {
+    video.muted = !video.muted;
+  });
+</script>
