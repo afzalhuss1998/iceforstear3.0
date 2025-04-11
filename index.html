@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICE Foresters</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: url('assets/background.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+      animation: slideIn 1s ease-out;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+    }
+
+    .typing-text {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .cta-button {
+      background: linear-gradient(to right, #ff0000, #e50914);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      animation: glow 2s infinite ease-in-out;
+      box-shadow: 0 0 10px #e50914;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #e50914; }
+      50% { box-shadow: 0 0 20px #ff1c1c, 0 0 30px #ff1c1c; }
+      100% { box-shadow: 0 0 10px #e50914; }
+    }
+
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      background: #111;
+      color: #666;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .whatsapp-float img {
+      width: 60px;
+      height: 60px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .typing-text {
+        font-size: 1.5em;
+      }
+
+      .logo {
+        width: 70px;
+        top: 10px;
+        right: 10px;
+      }
+
+      h2 {
+        font-size: 1em;
+      }
+
+      .cta-button {
+        font-size: 1em;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bgMusic" autoplay loop muted>
+    <source src="assets/background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="hero">
+    <img src="assets/logo.jpg" alt="ICE Foresters Logo" class="logo" />
+    <div class="typing-text">Welcome to ICE Exchange</div>
+    <h2>India's Trusted Online Exchange Platform</h2>
+    <a href="https://www.ice777.com" target="_blank" class="cta-button">Join Now</a>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 ICE Foresters. All rights reserved.
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/+447990181952" class="whatsapp-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat" />
+  </a>
+
+  <script>
+    // Allow user interaction to unmute and play background music
+    window.addEventListener('click', () => {
+      const music = document.getElementById('bgMusic');
+      music.muted = false; // Unmute music
+      music.play(); // Start playing music after click
+    }, { once: true });
+  </script>
+
+</body>
+</html>
+<!-- End of index.html -->
+<!-- This is a simple HTML page with a hero section, typing effect, and a floating WhatsApp button. The background music plays on user interaction. -->

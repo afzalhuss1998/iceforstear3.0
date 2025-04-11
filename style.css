@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .hero {
+    min-height: 100vh;
+    width: 100%;
+    background: url('../assets/background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+  }
+  
+  @keyframes slideIn {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .logo {
+    width: 70%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .typing-text {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    margin-bottom: 10px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  h2 {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    margin-bottom: 30px;
+    color: #ccc;
+    animation: slideIn 1.4s ease-out;
+  }
+  
+  .cta-button {
+    background: linear-gradient(to right, #ff0000, #e50914);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    animation: glow 2s infinite ease-in-out;
+    box-shadow: 0 0 10px #e50914;
+  }
+  
+  @keyframes glow {
+    0% { box-shadow: 0 0 10px #e50914; }
+    50% { box-shadow: 0 0 20px #ff1c1c, 0 0 30px #ff1c1c; }
+    100% { box-shadow: 0 0 10px #e50914; }
+  }
+  
+  .cta-button:hover {
+    opacity: 0.9;
+  }
+  
+  .footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    background: #111;
+    color: #666;
+  }
+  
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* 🔧 Responsive Fix for smaller screens */
+  @media (max-width: 480px) {
+    .typing-text {
+      font-size: 1.2rem;
+    }
+  
+    .cta-button {
+      padding: 12px 24px;
+      font-size: 0.9rem;
+    }
+  
+    h2 {
+      font-size: 1rem;
+    }
+  }
+  @keyframes logoFadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 150px;
+    width: 100%;
+    animation: logoFadeIn 1.5s ease-in-out;
+  }
+  
