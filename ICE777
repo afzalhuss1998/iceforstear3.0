@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetPro777 - Where Winners Play</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0f0f0f; color:#fff; font-family:'Arial',sans-serif; }
+    header { background:#1a1a1a; padding:15px; text-align:center; }
+    header h1 { font-size:24px; color:#f90; }
+    nav { display:flex; justify-content:center; gap:20px; padding:10px; background:#121212; }
+    nav a { color:#fff; text-decoration:none; font-size:16px; }
+    .hero { background:url('https://via.placeholder.com/1200x500') no-repeat center/cover; padding:100px 20px; text-align:center; }
+    .hero h2 { font-size:32px; color:#fff; }
+    .hero p { font-size:18px; color:#ddd; margin:10px 0; }
+    .cta-buttons { margin-top:20px; }
+    .cta-buttons a { display:inline-block; padding:12px 20px; background:#f90; color:#000; border-radius:5px; margin:5px; text-decoration:none; font-weight:bold; }
+    .offers { background:#1c1c1c; padding:20px; text-align:center; }
+    .offers h3 { color:#f90; margin-bottom:15px; }
+    .offers p { color:#ccc; margin-bottom:10px; }
+    .whatsapp { background:#25d366; color:#fff; padding:15px; text-align:center; text-decoration:none; display:block; font-weight:bold; }
+    footer { background:#111; padding:10px; text-align:center; color:#666; font-size:14px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BetPro777</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome to BetPro777</h2>
+    <p>Play Live Casino, Sports, Aviator, and More</p>
+    <div class="cta-buttons">
+      <a href="#">Download App</a>
+      <a href="https://wa.me/XXXXXXXXXX" target="_blank">Join on WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="offers">
+    <h3>🔥 Exciting Offers 🔥</h3>
+    <p>✅ 10% Bonus on Every Deposit</p>
+    <p>✅ Instant Withdrawals</p>
+    <p>✅ 24/7 Customer Support</p>
+  </section>
+
+  <a class="whatsapp" href="https://wa.me/XXXXXXXXXX" target="_blank">💬 Join Us on WhatsApp</a>
+
+  <footer>
+    © 2025 BetPro777. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

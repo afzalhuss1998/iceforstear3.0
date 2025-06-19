@@ -1,144 +1,204 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  background: #1a1a1a;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 30px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+header h1 span {
+  color: #ff2b2b;
+}
+
+.language-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 8px 0;
+  background: #111;
+}
+
+.language-tabs a {
+  color: #111;
+  background: yellow;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #444;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.language-tabs a:hover {
+  background: #ff2b2b;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background: #121212;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff2b2b;
+}
+
+.hero {
+  background: url('https://via.placeholder.com/1200x500/330000/ffffff?text=ICE777+Gaming') no-repeat center/cover;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.hero h2 span {
+  color: #ff2b2b;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #ddd;
+  margin: 8px 0;
+}
+
+.cta-buttons a,
+.register-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #ff2b2b;
+  color: #fff;
+  border-radius: 5px;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons a:hover,
+.register-btn:hover {
+  background: #fff;
+  color: #ff2b2b;
+  transform: scale(1.05);
+}
+
+.section {
+  padding: 30px 20px;
+  text-align: center;
+  background: #181818;
+}
+
+.section h3 {
+  font-size: 24px;
+  color: #ff2b2b;
+  margin-bottom: 15px;
+}
+
+.section p {
+  font-size: 17px;
+  color: #ccc;
+  margin-bottom: 10px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.features,
+.steps {
+  text-align: left;
+  color: #ccc;
+  margin-top: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.features li,
+.steps li {
+  margin-bottom: 8px;
+}
+
+.offers {
+  background: #1c1c1c;
+  padding: 20px;
+  text-align: center;
+}
+
+.offers h3 {
+  color: #ff2b2b;
+  margin-bottom: 15px;
+}
+
+.offers p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
+  50% {
+    transform: scale(1.1);
   }
-  
-  .hero {
-    min-height: 100vh;
-    width: 100%;
-    background: url('../assets/background.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    text-align: center;
-    animation: slideIn 1s ease-out;
+  100% {
+    transform: scale(1);
   }
-  
-  @keyframes slideIn {
-    0% { transform: translateY(50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-  
-  .logo {
-    width: 70%;
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 30px;
-  }
-  
-  .typing-text {
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
-    margin-bottom: 10px;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #fff;
-    width: 0;
-    animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
-  }
-  
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-  
-  @keyframes blink {
-    50% { border-color: transparent; }
-  }
-  
-  h2 {
-    font-size: clamp(1rem, 3vw, 1.3rem);
-    margin-bottom: 30px;
-    color: #ccc;
-    animation: slideIn 1.4s ease-out;
-  }
-  
-  .cta-button {
-    background: linear-gradient(to right, #ff0000, #e50914);
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    animation: glow 2s infinite ease-in-out;
-    box-shadow: 0 0 10px #e50914;
-  }
-  
-  @keyframes glow {
-    0% { box-shadow: 0 0 10px #e50914; }
-    50% { box-shadow: 0 0 20px #ff1c1c, 0 0 30px #ff1c1c; }
-    100% { box-shadow: 0 0 10px #e50914; }
-  }
-  
-  .cta-button:hover {
-    opacity: 0.9;
-  }
-  
-  .footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    background: #111;
-    color: #666;
-  }
-  
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-  }
-  
-  .whatsapp-float img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  /* 🔧 Responsive Fix for smaller screens */
-  @media (max-width: 480px) {
-    .typing-text {
-      font-size: 1.2rem;
-    }
-  
-    .cta-button {
-      padding: 12px 24px;
-      font-size: 0.9rem;
-    }
-  
-    h2 {
-      font-size: 1rem;
-    }
-  }
-  @keyframes logoFadeIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  .logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    max-width: 150px;
-    width: 100%;
-    animation: logoFadeIn 1.5s ease-in-out;
-  }
-  
+}
+
+footer {
+  background: #111;
+  padding: 10px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
