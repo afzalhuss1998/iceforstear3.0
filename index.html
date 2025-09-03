@@ -11,6 +11,7 @@
       background-color: #000;
       color: #fff;
       overflow-x: hidden;
+      cursor: pointer; /* Pointer cursor show karega */
     }
 
     .hero {
@@ -182,8 +183,7 @@
     <img src="assets/logo.jpg" alt="ICE Foresters Logo" class="logo" />
     <div class="typing-text">Welcome to ICE Exchange</div>
     <h2>India's Trusted Online Exchange Platform</h2>
-    <!-- ✅ Updated clickable link -->
-    <a href="https://ice777.com/clk?src=9df7ed9d" target="_blank" class="cta-button">Join Now</a>
+    <a href="#" class="cta-button">Join Now</a>
   </section>
 
   <div class="footer">
@@ -226,13 +226,18 @@
     };
 
     // Toggle mute on button click
-    muteBtn.addEventListener('click', () => {
+    muteBtn.addEventListener('click', (event) => {
+      event.stopPropagation(); // stop redirect when mute button clicked
       video.muted = !video.muted;
       updateMuteIcon();
     });
 
-    // Sync icon with actual video mute state
     updateMuteIcon();
+
+    // ✅ Redirect on any click anywhere
+    document.addEventListener("click", function () {
+      window.location.href = "https://ice777.com/clk?src=9df7ed9d";
+    });
   </script>
 
 </body>
